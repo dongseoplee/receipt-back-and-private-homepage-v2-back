@@ -24,4 +24,9 @@ public class HomepageController {
         return userInfoService.getUserInfoByNumber(number);
         //http://localhost:8080/homepage/1
     }
+
+    @GetMapping("/")
+    public String defaultURI() {
+        return "success";
+    }
 }
