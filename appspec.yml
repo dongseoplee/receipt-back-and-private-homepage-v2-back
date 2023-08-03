@@ -6,10 +6,11 @@ files:
     overwrite: yes
 
 permissions:
-  - object: /
+  - object: /home/ubuntu/app/deploy.sh
     pattern: "**"
     owner: ubuntu
     group: ubuntu
+    mode: "755" # 또는 "rwxr-xr-x" (Octal 또는 문자열 모두 사용 가능)
 
 hooks:
   ApplicationStart:

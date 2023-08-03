@@ -56,7 +56,7 @@ jobs:
 
     # script files 복사
     - name: Copy script
-      run: cp ./scripts/*.sh ./deploy
+      run: cp ./*.sh ./deploy
 
     - name: Make zip file
       run: zip -r ./githubActionDeploy.zip ./deploy
