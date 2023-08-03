@@ -27,6 +27,6 @@ public class HomepageController {
 
     @GetMapping("/")
     public String defaultURI() {
-        return "success test1";
+        return "github action success!";
     }
 }
