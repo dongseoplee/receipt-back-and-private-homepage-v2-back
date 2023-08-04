@@ -25,8 +25,14 @@ echo "> JAR NAME: $JAR_NAME"
 
 echo "> $JAR_NAME 에 실행권한 추가"
 
-chmod +x $JAR_NAME
+#chmod +x $JAR_NAME
+sudo chmod +x $JAR_NAME # 권한이 not permitted 되어서 sudo로 실행함
+
 
 echo "> $JAR_NAME 실행"
 
-nohup java -jar -Duser.timezone=Asia/Seoul $JAR_NAME >> $REPOSITORY/nohup.out 2>&1 &
+#nohup java -jar -Duser.timezone=Asia/Seoul $JAR_NAME >> $REPOSITORY/nohup.out 2>&1 &
+
+# nohup 권한 not permitted 해결위해 $REPOSITORY/nohup.out 을 /dev/null로 변경
+
+nohup java -jar -Duser.timezone=Asia/Seoul $JAR_NAME >> /dev/null 2>&1 &
