@@ -27,6 +27,6 @@ public class HomepageController {
 
     @GetMapping("/")
     public String defaultURI() {
-        return "github action success! -2023.08.04 1AM-";
+        return "github action success! -2023.08.04, Final CI/CD test-";
     }
 }
