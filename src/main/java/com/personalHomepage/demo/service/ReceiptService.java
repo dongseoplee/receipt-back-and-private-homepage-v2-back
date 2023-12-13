@@ -26,6 +26,7 @@ public class ReceiptService {
         Receipt receipt = new Receipt();
         receipt.setImage(receiptDTO.getImage());
         receipt.setTeam_id(receiptDTO.getTeam_id());
+        receipt.setJson_data(receiptDTO.getJson_data());
 
         return receipt;
     }

@@ -11,7 +11,6 @@ import lombok.*;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-
 public class Receipt {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,5 +18,6 @@ public class Receipt {
 
     private String image;
     private Long team_id;
+    private String json_data;
 
 }
