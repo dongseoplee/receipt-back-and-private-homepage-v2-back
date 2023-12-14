@@ -38,9 +38,11 @@ jobs:
 
     # create application.properties
     - name: make application.properties
-      run:
-        mkdir ./src/main/resources |
-        touch ./src/main/resources/application.properties
+      run: |
+        if [ ! -d "./src/main/resources" ]; then
+          mkdir -p ./src/main/resources
+          touch ./src/main/resources/application.properties
+        fi
       shell: bash
 
     - name: deliver application.properties
