@@ -6,6 +6,8 @@ import com.personalHomepage.demo.repository.ReceiptRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @Transactional
 public class ReceiptService {
@@ -27,8 +29,15 @@ public class ReceiptService {
         receipt.setImage(receiptDTO.getImage());
         receipt.setTeam_id(receiptDTO.getTeam_id());
         receipt.setJson_data(receiptDTO.getJson_data());
-
+        receipt.setAmount(receiptDTO.getAmount());
+        receipt.setCategory(receiptDTO.getCategory());
+        receipt.setVendor(receiptDTO.getVendor());
+        receipt.setPurchasedAt(receiptDTO.getPurchasedAt());
         return receipt;
+    }
+
+    public List<Receipt> getReceipt() {
+        return receiptRepository.findAll();
     }
 
 }

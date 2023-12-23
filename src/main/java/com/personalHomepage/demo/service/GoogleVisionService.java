@@ -24,7 +24,9 @@ public class GoogleVisionService {
 
     public String detectText(ReceiptDTO receiptDTO) throws IOException {
         // TODO(developer): Replace these variables before running the sample.
-        String filePath = "/Users/leedongseop/Desktop/personal-homepage-v2/personal-homepage/src/main/resources/static/images/image.jpg";
+//        String filePath = "src/main/resources/static/images/image.jpg";
+        String filePath = "/home/ubuntu/receiptImage/image.jpg";
+
         return detectText(filePath, receiptDTO);
     }
 
@@ -44,7 +46,9 @@ public class GoogleVisionService {
         // once, and can be reused for multiple requests. After completing all of your requests, call
         // the "close" method on the client to safely clean up any remaining background resources.
 
-        try (ImageAnnotatorClient client = ImageAnnotatorClient.create(ImageAnnotatorSettings.newBuilder().setCredentialsProvider(FixedCredentialsProvider.create(ServiceAccountCredentials.fromStream(new FileInputStream("src/main/resources/static/googleApiKey/sound-decoder-405906-1688265dee96.json")))).build())) {
+        //경로 설정
+//        try (ImageAnnotatorClient client = ImageAnnotatorClient.create(ImageAnnotatorSettings.newBuilder().setCredentialsProvider(FixedCredentialsProvider.create(ServiceAccountCredentials.fromStream(new FileInputStream("src/main/resources/static/googleApiKey/sound-decoder-405906-1688265dee96.json")))).build())) {
+          try (ImageAnnotatorClient client = ImageAnnotatorClient.create(ImageAnnotatorSettings.newBuilder().setCredentialsProvider(FixedCredentialsProvider.create(ServiceAccountCredentials.fromStream(new FileInputStream("/home/ubuntu/jsonKey/sound-decoder-405906-1688265dee96.json")))).build())) {
             BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
             List<AnnotateImageResponse> responses = response.getResponsesList();
 

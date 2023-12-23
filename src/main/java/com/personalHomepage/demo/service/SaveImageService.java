@@ -11,7 +11,9 @@ import java.util.Base64;
 public class SaveImageService {
 
     public void saveImage(String base64ImageData) {
-        String outputFilePath = "src/main/resources/static/images/image.jpg";
+        //경로설정 1.이미지 저장, 2.ocr 키 경로, 3. 이미지 불러오기
+//        String outputFilePath = "src/main/resources/static/images/image.jpg";
+        String outputFilePath = "/home/ubuntu/receiptImage/image.jpg";
         try {
             // Base64 디코딩
             byte[] decodedBytes = Base64.getDecoder().decode(base64ImageData);

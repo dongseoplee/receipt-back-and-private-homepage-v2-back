@@ -36,4 +36,6 @@ echo "> $JAR_NAME 실행"
 # nohup 권한 not permitted 해결위해 $REPOSITORY/nohup.out 을 /dev/null로 변경
 
 #nohup java -jar -Duser.timezone=Asia/Seoul $JAR_NAME >> /dev/null 2>&1 &
-nohup java -jar -Duser.timezone=Asia/Seoul $JAR_NAME > application.log 2>&1 &
+#nohup java -jar -Duser.timezone=Asia/Seoul $JAR_NAME > application.log 2>&1 &
+
+nohup java -jar -Duser.timezone=Asia/Seoul $JAR_NAME &
